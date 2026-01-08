@@ -1,7 +1,20 @@
 name: Manually Triggered
 on:
   workflow_dispatch:
-
+    inputs: 
+      string:
+       description: A string input
+       type: string
+       required : true
+       default: "Default value"
+      option:
+        description: An Option Input
+        type: choice
+        required : true
+        options:
+            - Option 1
+            - Option 2
+            - Option 3
 jobs:
   log-info:
     runs-on: ubuntu-latest
